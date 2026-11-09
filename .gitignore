@@ -1,0 +1,19 @@
+# Chaves de assinatura nunca entram no Git
+*.jks
+*.keystore
+*.p12
+*.pem
+*password*.txt
+*password*.properties
+**/signing/**
+
+# Saídas de build e segredos
+out/
+*.apk
+*.aab
+local.properties
+.gradle/
+.idea/
+.DS_Store
+__pycache__/
+*.pyc

@@ -1,0 +1,76 @@
+{
+  "format": "natural_cam_research_registry_v1",
+  "checked_at": "2026-11-08",
+  "scene_training_completed": false,
+  "oppo_calibration_completed": false,
+  "datasets": [
+    {
+      "name": "Cube++",
+      "url": "https://github.com/Visillect/CubePlusPlus",
+      "license": "CC BY 4.0",
+      "purpose": [
+        "illumination_estimation",
+        "mixed_light",
+        "daytime_context",
+        "shadows"
+      ],
+      "scope": "Reference metadata inspected; Canon sensor colour gains must not be transferred directly to OPPO.",
+      "images_bundled": false
+    },
+    {
+      "name": "HDR+ Burst Photography Dataset",
+      "url": "https://www.hdrplusdata.org/dataset.html",
+      "license": "CC BY-SA",
+      "purpose": [
+        "RAW_bursts",
+        "alignment_and_fusion_validation",
+        "low_light",
+        "dynamic_range"
+      ],
+      "scope": "Research reference; one DNG used for metadata/pixel-integrity validation; no Google Camera proprietary engine bundled.",
+      "images_bundled": false
+    }
+  ],
+  "gcam_references": [
+    {
+      "name": "AGC 9.2.14 V14.0 / GR7 OPPO Find X8 Ultra V5",
+      "url": "https://config.agccam.com/450",
+      "configuration_date": "2026-06-02",
+      "scope": "Publication inspected; download endpoint returned 403, configuration values not imported."
+    },
+    {
+      "name": "BSG MGC 9.4.103 V41",
+      "url": "https://www.celsoazevedo.com/files/android/google-camera/dev-suggested/",
+      "published": "2026-10-18",
+      "scope": "Recent stable-list candidate; not image-quality validated on OPPO."
+    }
+  ],
+  "source_references": [
+    {
+      "name": "Photon Camera",
+      "url": "https://github.com/bjzhou/PhotonCamera",
+      "commit": "a57a1877bf6cecaae9222d321065a51a583bdb74",
+      "license": "Apache-2.0 except separately licensed assets",
+      "scope": "Depth tensor contract and verified X8 main-camera preference. No blanket transfer of black-level/noise values."
+    }
+  ],
+  "model": {
+    "name": "Depth Anything V2 Small",
+    "source": "https://github.com/DepthAnything/Depth-Anything-V2",
+    "conversion": "Qualcomm AI Hub v0.59.0 float TFLite",
+    "sha256": "69302c7b94a2ebe6f31d5caa78cb72d7e15f5ba72804d0423e699787368a255f",
+    "original_license": "Apache-2.0",
+    "purpose": "Relative depth only; not colour constancy or RAW denoising."
+  },
+  "capture_policy": {
+    "clock": "context_only",
+    "temperature_from_clock": false,
+    "auto_shadow_lift": false,
+    "automatic_beautification": false,
+    "automatic_denoising_request": "camera_template_default_unless_user_explicitly_overrides",
+    "automatic_sharpening_request": "camera_template_default_unless_user_explicitly_overrides",
+    "full_resolution_export": "tiled_original_source_no_upscale",
+    "highlight_heuristic_enabled_by_default": false,
+    "photographic_quality_validated_on_OPPO": false
+  }
+}

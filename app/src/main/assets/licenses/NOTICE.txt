@@ -1,0 +1,11 @@
+Natural Cam 0.2 — third-party notices
+
+AndroidX ExifInterface 1.3.7 — Android Open Source Project, Apache-2.0.
+Google AI Edge LiteRT 1.4.1 — Google/TensorFlow authors, Apache-2.0.
+Depth Anything V2 Small — Depth Anything authors (2024), Apache-2.0. The Small checkpoint only is bundled; larger noncommercial checkpoints are not used.
+Qualcomm AI Hub float conversion v0.59.0 — Qualcomm Technologies; see QAI-HUB-MODELS-LICENSE.txt.
+Photon Camera by bjzhou — source reference a57a1877bf6cecaae9222d321065a51a583bdb74, Apache-2.0 except third-party assets. The depth input contract and X8 main-camera preference informed the original Java integration. No proprietary LUT, Adobe DCP or other Photon asset is bundled.
+libjpeg-turbo 3.1.2 — The libjpeg-turbo Project, IJG and credited contributors; see LIBJPEG-TURBO.txt and README-IJG.txt. This software is based in part on the work of the Independent JPEG Group.
+Cube++ annotation excerpts — Egor Ershov et al., 2020, CC BY 4.0. See research_registry.json and https://github.com/Visillect/CubePlusPlus. Metadata references only; no dataset photographs are bundled.
+
+All 40 image style recipes and the Natural Cam camera/editor code were authored for this project. Brand names describe inspiration only; no affiliation or exact proprietary colour-reproduction claim.

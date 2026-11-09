@@ -1,0 +1,175 @@
+{
+  "source": "Visillect/CubePlusPlus",
+  "license": "CC BY 4.0",
+  "attribution": "Ershov et al., The Cube++ Illumination Estimation Dataset, IEEE Access 2020",
+  "annotations": [
+    {
+      "file": "cube_00_0001.jpg.json",
+      "properties": {
+        "daytime": "day",
+        "estimation": "full",
+        "gdpr_objects": [
+          "none"
+        ],
+        "has_cube_plus": true,
+        "has_known_objects": true,
+        "illumination": "natural",
+        "is_sharp": true,
+        "light_objects": [
+          "sky"
+        ],
+        "place": "outdoor",
+        "richness": "rich",
+        "shadows": "yes"
+      },
+      "purpose": "metadata_reference_only_not_training"
+    },
+    {
+      "file": "cube_01_7745.jpg.json",
+      "properties": {
+        "daytime": "unknown",
+        "estimation": "partial",
+        "gdpr_objects": [
+          "none"
+        ],
+        "has_cube_plus": true,
+        "has_known_objects": true,
+        "illumination": "artificial",
+        "is_sharp": true,
+        "light_objects": [
+          "lamp"
+        ],
+        "place": "indoor",
+        "richness": "rich",
+        "shadows": "yes"
+      },
+      "purpose": "metadata_reference_only_not_training"
+    },
+    {
+      "file": "cube_02_8080.jpg.json",
+      "properties": {
+        "daytime": "unknown",
+        "estimation": "partial",
+        "gdpr_objects": [
+          "none"
+        ],
+        "has_cube_plus": true,
+        "has_known_objects": true,
+        "illumination": "artificial",
+        "is_sharp": true,
+        "light_objects": [
+          "lamp"
+        ],
+        "place": "indoor",
+        "richness": "rich",
+        "shadows": "yes"
+      },
+      "purpose": "metadata_reference_only_not_training"
+    },
+    {
+      "file": "cube_03_9166.jpg.json",
+      "properties": {
+        "daytime": "unknown",
+        "estimation": "full",
+        "gdpr_objects": [
+          "none"
+        ],
+        "has_cube_plus": true,
+        "has_known_objects": false,
+        "illumination": "artificial",
+        "is_sharp": true,
+        "light_objects": [
+          "none"
+        ],
+        "place": "indoor",
+        "richness": "rich",
+        "shadows": "yes"
+      },
+      "purpose": "metadata_reference_only_not_training"
+    },
+    {
+      "file": "cube_04_9417.jpg.json",
+      "properties": {
+        "daytime": "day",
+        "estimation": "full",
+        "gdpr_objects": [
+          "none"
+        ],
+        "has_cube_plus": true,
+        "has_known_objects": true,
+        "illumination": "natural",
+        "is_sharp": true,
+        "light_objects": [
+          "sky"
+        ],
+        "place": "outdoor",
+        "richness": "rich",
+        "shadows": "no"
+      },
+      "purpose": "metadata_reference_only_not_training"
+    },
+    {
+      "file": "cube_05_8773.jpg.json",
+      "properties": {
+        "daytime": "unknown",
+        "estimation": "full",
+        "gdpr_objects": [
+          "none"
+        ],
+        "has_cube_plus": true,
+        "has_known_objects": false,
+        "illumination": "unknown",
+        "is_sharp": true,
+        "light_objects": [
+          "none"
+        ],
+        "place": "indoor",
+        "richness": "rich",
+        "shadows": "yes"
+      },
+      "purpose": "metadata_reference_only_not_training"
+    },
+    {
+      "file": "cube_06_9314.jpg.json",
+      "properties": {
+        "daytime": "unknown",
+        "estimation": "full",
+        "gdpr_objects": [
+          "none"
+        ],
+        "has_cube_plus": true,
+        "has_known_objects": false,
+        "illumination": "unknown",
+        "is_sharp": true,
+        "light_objects": [
+          "none"
+        ],
+        "place": "indoor",
+        "richness": "rich",
+        "shadows": "no"
+      },
+      "purpose": "metadata_reference_only_not_training"
+    },
+    {
+      "file": "cube_07_0033.jpg.json",
+      "properties": {
+        "daytime": "night",
+        "estimation": "full",
+        "gdpr_objects": [
+          "none"
+        ],
+        "has_cube_plus": true,
+        "has_known_objects": false,
+        "illumination": "artificial",
+        "is_sharp": false,
+        "light_objects": [
+          "none"
+        ],
+        "place": "outdoor",
+        "richness": "rich",
+        "shadows": "yes"
+      },
+      "purpose": "metadata_reference_only_not_training"
+    }
+  ]
+}

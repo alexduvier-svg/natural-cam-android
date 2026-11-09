@@ -1,0 +1,66 @@
+name: Natural Cam — APK de teste assinado
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verificar-e-compilar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Obter código do repositório
+        uses: actions/checkout@v4
+      - name: Instalar Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Instalar Android SDK
+        uses: android-actions/setup-android@v3
+      - name: Instalar Android 36 e Build Tools 36.0.0
+        run: sdkmanager --install 'platforms;android-36' 'build-tools;36.0.0'
+      - name: Verificar arquivos essenciais e executar regressões
+        run: |
+          test -s app/src/main/assets/depth_anything_v2.tflite
+          test -s app/src/main/jniLibs/arm64-v8a/libtensorflowlite_jni.so
+          python3 tests/run_harness_smoke.py
+      - name: Exigir assinatura original sem expor senha
+        env:
+          KEYSTORE_B64: ${{ secrets.NATURAL_CAM_KEYSTORE_B64 }}
+          STORE_PASSWORD: ${{ secrets.NATURAL_CAM_KEYSTORE_PASSWORD }}
+        run: |
+          if [ -z "$KEYSTORE_B64" ] || [ -z "$STORE_PASSWORD" ]; then
+            echo 'Secrets de assinatura ausentes. Build assinado interrompido para preservar atualização do app.'
+            exit 1
+          fi
+          umask 077
+          mkdir -p "$RUNNER_TEMP/naturalcam_signing"
+          printf '%s' "$KEYSTORE_B64" | base64 --decode > "$RUNNER_TEMP/naturalcam_signing/original.jks"
+          printf '%s' "$STORE_PASSWORD" > "$RUNNER_TEMP/naturalcam_signing/password.txt"
+      - name: Gerar APK com assinatura original
+        env:
+          ANDROID_HOME: ${{ env.ANDROID_HOME }}
+        run: |
+          python3 build.py \n            --sdk "$ANDROID_SDK_ROOT" \n            --keystore "$RUNNER_TEMP/naturalcam_signing/original.jks" \n            --password-file "$RUNNER_TEMP/naturalcam_signing/password.txt"
+      - name: Validar APK e registrar SHA-256
+        run: |
+          APK='out/Natural_Cam_0.2.2-teste.1.apk'
+          test -s "$APK"
+          sha256sum "$APK" | tee out/Natural_Cam_0.2.2-teste.1.sha256
+          "$ANDROID_SDK_ROOT/build-tools/36.0.0/apksigner" verify --verbose --print-certs "$APK"
+          "$ANDROID_SDK_ROOT/build-tools/36.0.0/zipalign" -P 16 -c 4 "$APK"
+      - name: Guardar APK para download
+        uses: actions/upload-artifact@v4
+        with:
+          name: Natural-Cam-0.2.2-teste-1-APK
+          path: |
+            out/Natural_Cam_0.2.2-teste.1.apk
+            out/Natural_Cam_0.2.2-teste.1.sha256
+          if-no-files-found: error
+          retention-days: 14
+      - name: Remover arquivos temporários de assinatura
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/naturalcam_signing"

@@ -1,0 +1,65 @@
+{
+  "checked_at": "2026-11-08",
+  "scope": "Reference only; actual chip identity, RAW200MP, hardware remosaic and CameraUnit support not verified on handset.",
+  "models": {
+    "global": "CPH2863",
+    "china": "PMK110"
+  },
+  "oppo_confirmed": {
+    "main_mp": 200,
+    "main_f_number": 1.8,
+    "tele_mp": 50,
+    "tele_f_number": 2.8,
+    "optical_zoom_marketed": 3.5,
+    "ultrawide_mp": 50,
+    "ultrawide_f_number": 2.0,
+    "separate_7x_telephoto_documented": false,
+    "colour_temperature_sensor_listed": true,
+    "sources": [
+      "https://www.oppo.com/en/smartphones/series-reno/reno16-pro/specs/",
+      "https://www.oppo.com/cn/smartphones/series-reno/reno16-pro/specs/"
+    ]
+  },
+  "chip_candidates_not_firmware_verified": {
+    "main": "Samsung ISOCELL HP5",
+    "telephoto": "Samsung ISOCELL JN5",
+    "ultrawide": "GalaxyCore GC50F6",
+    "selfie": "Samsung ISOCELL JN5",
+    "source_kind": "secondary reports; not primary OPPO component confirmation",
+    "leads": [
+      "https://www.gsmarena.com/weekly_poll_would_you_buy_the_oppo_reno16_what_about_the_oppo_reno16_pro-news-73462.php",
+      "https://www.kimovil.com/en/where-to-buy-oppo-reno16-pro"
+    ],
+    "kimovil_exact_sensor_fields": "not identified in retrieved sheet"
+  },
+  "samsung_component_capabilities_not_handset_guarantee": {
+    "HP5": [
+      "200MP,50MP,12.5MP modes",
+      "2x hardware remosaic and 4x software remosaic as documented"
+    ],
+    "JN5": [
+      "50MP",
+      "2x hardware remosaic zoom",
+      "Super QPD AF",
+      "HDR DSG"
+    ]
+  },
+  "cameraunit": {
+    "official": "https://github.com/oppo/CameraUnit",
+    "capabilities": [
+      "SAT Zoom",
+      "HDR Capture",
+      "Portrait Capture",
+      "Night Capture"
+    ],
+    "demo_dependency": "com.oplus.ocs:camera:1.0.7",
+    "support_for_Reno16Pro_confirmed": false,
+    "bundled_or_enabled": false
+  },
+  "policy": {
+    "sensor_gains_or_black_levels_copied": false,
+    "clock_drives_colour_temperature": false,
+    "runtime_capabilities_have_priority": true,
+    "manufacturer_spec_does_not_unlock_hidden_modes": true
+  }
+}
