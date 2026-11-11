@@ -13,3 +13,13 @@ O usuário Duvier definiu qualidade fotográfica real como critério obrigatóri
 - Não distribuir uma nova versão como solução fotográfica validada enquanto a dominante verde e o ruído não forem confirmados como corrigidos. Builds intermediários servem para testes internos.
 
 Objetivo e critérios mensuráveis: `GOAL.md`. Preservar assinatura, pacote e versões anteriores.
+
+## Fluxo de trabalho Codex — prompting e verificação (11/11/2026)
+
+- Antes de mudanças relevantes, consulte `docs/DIRETRIZ_MESTRA_PROMPTS_CODEX.md` e, para contexto fotográfico, `docs/AGENTS_NATURAL_CAM_MODELO.md`.
+- Para diagnósticos, execução, revisão e fechamento, há modelos em `docs/PROMPTS_CODEX_PARA_USAR.md`. Use apenas o que for pertinente.
+- Declare objetivo, cenário de uso, escopo, invariantes e critérios de aceite; investigue a causa raiz antes de modificar.
+- Preserve todas as regras obrigatórias acima. O modelo complementar não revoga o `GOAL.md` nem autoriza alterar comportamento, assinatura, pacote ou versão.
+- Revise diffs, execute testes pertinentes e diferencie validação automatizada de comprovação fotográfica no OPPO físico. Use revisão independente quando houver suporte e justificativa, sem contornar bloqueios.
+- Não afirme conclusão sem evidências; relate testes reais, não executados, riscos, pendências e status de publicação.
+- Instalação destes documentos não autoriza modificar código do app, realizar build, publicar APK ou executar deploy.
